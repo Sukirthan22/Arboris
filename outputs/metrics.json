@@ -1,0 +1,40 @@
+{
+  "n_cells": 3335,
+  "cell_size_m": 200,
+  "n_features": 23,
+  "r2_mean": 0.437,
+  "r2_sd": 0.093,
+  "rmse_mean": 58.45,
+  "rmse_sd": 4.33,
+  "mae_mean": 42.07,
+  "validation": "spatially-blocked, 5 repeats",
+  "aoi": {
+    "name": "nilgiris_anamalai",
+    "bounds_epsg4326": [
+      76.85031,
+      10.25034,
+      77.24984,
+      10.5497
+    ],
+    "mapped_area_ha": 36276.7,
+    "note": "mapped area = union of 200 m cells containing >=1 quality-filtered GEDI footprint; NOT the full administrative AOI"
+  },
+  "biomass": {
+    "n_cells_predicted": 9220,
+    "n_cells_trainable": 3335,
+    "cell_area_ha": 3.9346,
+    "mean_agbd_mg_ha": 132.11,
+    "total_agb_mg": 4792672.8,
+    "n_cells_clipped_to_zero": 0,
+    "mean_tree_disagreement_mg_ha": 43.89
+  },
+  "carbon": {
+    "carbon_fraction": 0.47,
+    "co2_per_c": 3.6667,
+    "total_c_mg": 2252556.2,
+    "total_co2e_mg": 8259372.7,
+    "mean_co2e_mg_ha": 227.68,
+    "scope": "above-ground biomass only"
+  },
+  "synthetic": false
+}
