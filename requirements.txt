@@ -1,0 +1,54 @@
+# ── Arboris — Phase 0-2 + 4 (what we're actually shipping) ──────────
+
+# Google Earth Engine — GEDI, Sentinel-1/2, SRTM access
+earthengine-api==1.6.11
+google-auth==2.41.1
+
+# Core numerics / tabular
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+
+# Modelling
+scikit-learn==1.7.2
+joblib==1.5.2
+
+# Geospatial
+rasterio==1.4.3
+geopandas==1.1.1
+shapely==2.1.2
+pyproj==3.7.2
+fiona==1.10.1
+
+# Config
+pyyaml==6.0.3
+
+# Plots for the deck (scatter, feature importance, biomass preview)
+matplotlib==3.10.7
+
+# API — serves precomputed outputs/ only (api/main.py)
+fastapi==0.118.3
+uvicorn[standard]==0.37.0
+
+# Tests
+pytest
+
+# Notebooks
+jupyterlab==4.4.9
+ipykernel==6.30.1
+
+
+# ── Optional: only uninstall-later if you actually build these ──────
+# rio-tiler / titiler for raster tiles (currently cut)
+# rio-tiler==7.8.1
+# titiler-core==0.22.4
+#
+# Phase 2 upgrade — XGBoost/LightGBM benchmarked within noise of
+# RandomForest on spatially-blocked splits; not needed for the result.
+# xgboost==3.0.5
+# lightgbm==4.6.0
+#
+# Phase 3 crown inference — Colab/CUDA only; outputs are precomputed.
+# src/models/crowns.py imports these lazily; not needed locally.
+# torch==2.8.0
+# detectree2

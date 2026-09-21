@@ -1,0 +1,41 @@
+# Arboris — single source of truth for every tunable (AGENTS.md §4).
+
+project:
+  seed: 42
+
+# Phase 3 — tree crowns on the demo tile only (AGENTS.md I7, §6.10).
+# Every value below is the exact setting used in notebooks/detectree2.ipynb.
+crowns:
+  model: detectree2
+  model_version: 250312_flexi            # detectree2 model-garden pretrained weights
+  weights_path: models/pretrained.pth    # 250312_flexi checkpoint; used as-is, NO fine-tune
+  benchmark: neon                        # NeonTreeEvaluation RGB tiles + XML box labels
+
+  # Inputs: data_dir/<tile_prefix><t>.tif with its box labels in <tile_prefix><t>.xml
+  data_dir: data/raw
+  tile_prefix: demo
+  work_dir: data/interim/crowns          # detectree2 tiling / prediction scratch
+
+  # Tiling — one tile covers the whole ~40 m image. MUST match how the weights are run.
+  tiling:
+    tile_width: 41
+    tile_height: 41
+    buffer: 0
+    full_coverage: true
+    dtype_bool: true
+
+  # Inference + post-processing
+  score_thresh_test: 0.05                # keep low at inference; filter with confidence_threshold later
+  stitch_shift: 1                        # detectree2 stitch_crowns(shift=...)
+  dedup_iou: 0.6                         # clean_crowns: drop duplicate crowns with IoU > 0.6
+
+  # Evaluation
+  match_iou: 0.4                         # predicted envelope vs truth box, greedy 1-to-1, IoU >= 0.4
+  threshold_candidates: [0.1, 0.2, 0.3, 0.4, 0.5]
+  tune_tiles: [1, 2, 3, 4, 5, 6, 7]      # confidence cutoff is chosen on these only
+  test_tiles: [8, 9, 10]                 # held out — never used to choose anything
+  confidence_threshold: 0.1              # winner on tune_tiles (notebook cell 17)
+
+  # Demo artefact served by the API
+  demo_tile: 8
+  demo_output: outputs/demo8_crowns.geojson

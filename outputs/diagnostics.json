@@ -1,0 +1,96 @@
+{
+  "split": {
+    "strategy": "spatial_block",
+    "n_blocks_grid": 10,
+    "seed": 42,
+    "n_train": 2611,
+    "n_test": 724,
+    "n_held_out_blocks": 24,
+    "block_leakage": false
+  },
+  "holdout": {
+    "r2": 0.534,
+    "rmse_mg_ha": 51.4,
+    "mae_mg_ha": 37.82,
+    "bias_mg_ha": 3.31
+  },
+  "uncertainty": {
+    "definition": "1 s.d. of the 500 individual tree predictions; a measure of MODEL DISAGREEMENT, not a calibrated confidence interval",
+    "corr_spread_vs_abs_error": 0.445,
+    "rmse_ratio_high_over_low_band": 2.37,
+    "bands": [
+      {
+        "band": "low (most confident)",
+        "n": 241,
+        "mean_spread_mg_ha": 24.01,
+        "rmse_mg_ha": 27.79,
+        "mae_mg_ha": 19.13
+      },
+      {
+        "band": "medium",
+        "n": 241,
+        "mean_spread_mg_ha": 47.45,
+        "rmse_mg_ha": 52.82,
+        "mae_mg_ha": 41.64
+      },
+      {
+        "band": "high (least confident)",
+        "n": 242,
+        "mean_spread_mg_ha": 65.63,
+        "rmse_mg_ha": 66.0,
+        "mae_mg_ha": 52.62
+      }
+    ]
+  },
+  "saturation": [
+    {
+      "obs_range_mg_ha": "0-50",
+      "n": 81,
+      "mean_observed_mg_ha": 26.3,
+      "mean_predicted_mg_ha": 44.4,
+      "bias_mg_ha": 18.2
+    },
+    {
+      "obs_range_mg_ha": "50-100",
+      "n": 189,
+      "mean_observed_mg_ha": 75.6,
+      "mean_predicted_mg_ha": 108.9,
+      "bias_mg_ha": 33.2
+    },
+    {
+      "obs_range_mg_ha": "100-150",
+      "n": 198,
+      "mean_observed_mg_ha": 124.2,
+      "mean_predicted_mg_ha": 141.4,
+      "bias_mg_ha": 17.2
+    },
+    {
+      "obs_range_mg_ha": "150-200",
+      "n": 134,
+      "mean_observed_mg_ha": 172.2,
+      "mean_predicted_mg_ha": 167.8,
+      "bias_mg_ha": -4.5
+    },
+    {
+      "obs_range_mg_ha": "200-250",
+      "n": 72,
+      "mean_observed_mg_ha": 223.8,
+      "mean_predicted_mg_ha": 178.4,
+      "bias_mg_ha": -45.3
+    },
+    {
+      "obs_range_mg_ha": "250-300",
+      "n": 23,
+      "mean_observed_mg_ha": 272.3,
+      "mean_predicted_mg_ha": 204.0,
+      "bias_mg_ha": -68.3
+    },
+    {
+      "obs_range_mg_ha": "300-+",
+      "n": 27,
+      "mean_observed_mg_ha": 335.3,
+      "mean_predicted_mg_ha": 212.0,
+      "bias_mg_ha": -123.3
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "generated_utc": "2026-09-20T15:44:48+00:00",
+  "git_sha": "81c366b",
+  "git_tree_dirty": true,
+  "synthetic": false,
+  "headline": {
+    "total_co2e_mg": 8259372.7,
+    "mapped_area_ha": 36276.7,
+    "r2_mean": 0.437,
+    "rmse_mean_mg_ha": 58.45
+  },
+  "n_artefacts": 11,
+  "artefacts": [
+    {
+      "path": "outputs/metrics.json",
+      "description": "every number the UI displays",
+      "bytes": 1029,
+      "sha256": "4ee59541ca3cfeddbda86d31aa3db47de904f605777dde7cfccd57f40be190df",
+      "modified_utc": "2026-09-20T15:40:46+00:00"
+    },
+    {
+      "path": "outputs/diagnostics.json",
+      "description": "hold-out diagnostics, uncertainty calibration, saturation",
+      "bytes": 2299,
+      "sha256": "6efae3ad85cd023220e577ed03cdef89673da9434062e2bcee31c1519e696740",
+      "modified_utc": "2026-09-20T15:34:17+00:00"
+    },
+    {
+      "path": "outputs/cells_agb.geojson",
+      "description": "200 m cells: predicted AGB, GEDI label, tree disagreement",
+      "bytes": 2163529,
+      "sha256": "44467ffe2901ec4bfc0d0b1f19ef1434bf290ff5bd42d686db8b47890b1c2a10",
+      "modified_utc": "2026-09-20T15:40:46+00:00"
+    },
+    {
+      "path": "outputs/scatter.png",
+      "description": "predicted vs observed, spatially-blocked hold-out",
+      "bytes": 114364,
+      "sha256": "17be198f7edfc19562043c9842d26130b6cb5f762fd6618dfab35dd5246d443a",
+      "modified_utc": "2026-09-20T11:28:24+00:00"
+    },
+    {
+      "path": "outputs/feature_importance.png",
+      "description": "random forest feature importance",
+      "bytes": 49142,
+      "sha256": "915e1a8ebefdc2b6eb3d5aaea6a66fd60fb0645d44d40e5a29fecae77b3cd365",
+      "modified_utc": "2026-09-20T11:28:25+00:00"
+    },
+    {
+      "path": "outputs/residuals.png",
+      "description": "residuals vs predicted - shows high-biomass saturation",
+      "bytes": 134440,
+      "sha256": "ac68d42be8cb5caa61e1671f37be6eb2a700f2ce273a08986b62317f15fd1721",
+      "modified_utc": "2026-09-20T15:34:16+00:00"
+    },
+    {
+      "path": "outputs/uncertainty_calibration.png",
+      "description": "tree disagreement vs actual hold-out error",
+      "bytes": 139173,
+      "sha256": "19c2e5fe37dccbd4593826b590a969f61be2b95d88bd4e69fa6923cbcb12ab5b",
+      "modified_utc": "2026-09-20T15:34:17+00:00"
+    },
+    {
+      "path": "outputs/agb_map.png",
+      "description": "static biomass map, fallback for the demo",
+      "bytes": 173541,
+      "sha256": "460587728351afe90811318ebaf00c16cccca8dea58ac6a9b4855d6411ab1f53",
+      "modified_utc": "2026-09-20T15:40:48+00:00"
+    },
+    {
+      "path": "models/arboris_rf.pkl",
+      "description": "fitted RandomForest + feature order + cell size",
+      "bytes": 42236331,
+      "sha256": "8a2f87b7bfccf07dacef3f4b9a9fd7cbc3180ebb0efe18919e5e3d3bc3460e03",
+      "modified_utc": "2026-09-20T11:28:28+00:00"
+    },
+    {
+      "path": "data/arboris_training.csv",
+      "description": "GEDI L4A labels joined to Sentinel-1/2 + SRTM features",
+      "bytes": 11528234,
+      "sha256": "8ae3faf69e1733972bb228987f5fec5059452ced16643242552ba05c03d3b61e",
+      "modified_utc": "2026-09-19T16:13:38+00:00"
+    },
+    {
+      "path": "frontend/arboris_demo.html",
+      "description": "self-contained demo page",
+      "bytes": 2185000,
+      "sha256": "a2ee70eece4fa93f986b8f88bff47eb322f90adc1625398735421d94d774efef",
+      "modified_utc": "2026-09-20T15:40:49+00:00"
+    }
+  ],
+  "missing": []
+}
